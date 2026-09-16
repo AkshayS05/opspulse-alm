@@ -1,0 +1,75 @@
+name: release-solution-to-prod
+
+on:
+  workflow_dispatch:
+
+env:
+  SOLUTION_NAME: OpsPulse
+  BUILD_ENVIRONMENT_URL: https://orgf4581915.crm3.dynamics.com
+  PROD_ENVIRONMENT_URL: https://org6cfe97b2.crm3.dynamics.com
+
+jobs:
+  convert-to-managed:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
+    - name: Pack solution from source files
+      uses: microsoft/powerplatform-actions/pack-solution@v1
+      with:
+        solution-folder: solutions/${{ env.SOLUTION_NAME }}
+        solution-file: out/${{ env.SOLUTION_NAME }}.zip
+        solution-type: Unmanaged
+
+    - name: Import to build environment
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{ env.BUILD_ENVIRONMENT_URL }}
+        app-id: ${{ secrets.PP_APP_ID }}
+        client-secret: ${{ secrets.PP_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.PP_TENANT_ID }}
+        solution-file: out/${{ env.SOLUTION_NAME }}.zip
+        force-overwrite: true
+        publish-changes: true
+
+    - name: Export as MANAGED
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: ${{ env.BUILD_ENVIRONMENT_URL }}
+        app-id: ${{ secrets.PP_APP_ID }}
+        client-secret: ${{ secrets.PP_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.PP_TENANT_ID }}
+        solution-name: ${{ env.SOLUTION_NAME }}
+        managed: true
+        solution-output-file: out/ship/${{ env.SOLUTION_NAME }}.zip
+
+    - name: Save the artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: managedSolutions
+        path: out/ship/
+
+  release-to-prod:
+    needs: convert-to-managed
+    runs-on: windows-latest
+    steps:
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
+    - name: Get the artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: managedSolutions
+        path: out/release/
+
+    - name: Import to production
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{ env.PROD_ENVIRONMENT_URL }}
+        app-id: ${{ secrets.PP_APP_ID }}
+        client-secret: ${{ secrets.PP_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.PP_TENANT_ID }}
+        solution-file: out/release/${{ env.SOLUTION_NAME }}.zip
