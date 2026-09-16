@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{5ac23830-abab-f111-b373-70a8a50ddf97}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ops_name" select="1" icon="1" preview="1">
+        <row name="result" id="ops_incidentid">
+          <cell name="ops_name" width="100" />
+          <cell name="ops_shipper" width="100" />
+          <cell name="ops_stationcode" width="113" />
+          <cell name="ops_losscategory" width="122" />
+          <cell name="ops_detectionsummary" width="200" />
+          <cell name="ops_sladeadline" width="121" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="ops_incident">&lt;attribute name="ops_title" /&gt;&lt;attribute name="ops_losscategory" /&gt;&lt;attribute name="ops_severity" /&gt;&lt;attribute name="ops_sladeadline" /&gt;&lt;attribute name="ops_detectionsummary" /&gt;<attribute name="ops_detectionsummary" /><attribute name="ops_incidentid" /><attribute name="ops_name" /><attribute name="ops_shipper" /><attribute name="ops_stationcode" /><attribute name="ops_losscategory" /><attribute name="ops_sladeadline" /><order attribute="ops_sladeadline" descending="true" /></entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Lost Packages" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

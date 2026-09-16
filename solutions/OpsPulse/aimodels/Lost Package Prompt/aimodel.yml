@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AIModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <msdyn_aimodelid>{c6a3e7e1-cbac-41da-a5e6-ce97ebd6c900}</msdyn_aimodelid>
+  <msdyn_name>Lost Package Prompt</msdyn_name>
+  <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+  <statecode>1</statecode>
+  <statuscode>1</statuscode>
+  <IsCustomizable>1</IsCustomizable>
+  <msdyn_activerunconfigurationid>{d145a8bc-f339-440e-9be3-fdc7fb8f08ff}</msdyn_activerunconfigurationid>
+  <AIConfigurations>
+    <AIConfiguration>
+      <msdyn_aiconfigurationid>{d145a8bc-f339-440e-9be3-fdc7fb8f08ff}</msdyn_aiconfigurationid>
+      <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"You are a logistics case analyzer for a parcel carrier. You read a support\r\ncase note written by an agent and determine whether the package is lost,\r\nand if so, where in the network it was lost.\r\n\r\nCASE NOTE:\r\n  "},{"type":"inputVariable","id":"CaseNote"},{"type":"literal","text":"  \r\n\r\n\r\nHOW TO DECIDE\r\n\r\nDo not look for keywords. The note will rarely say \"lost\" or \"missing\".\r\nReason about the operational facts: where was the package last seen,\r\nwhat should have happened next, and what actually happened.\r\n\r\nAsk yourself:\r\n1. Is there evidence the package is unaccounted for, delivered to the\r\n   wrong place, or taken after delivery?\r\n2. If yes — at which point in the network did it fail?\r\n3. If no — it is not lost, regardless of whether the case is a problem.\r\n\r\n\r\nCATEGORY DEFINITIONS (mutually exclusive — pick exactly one)\r\n\r\n\"Never arrived at station\"\r\n  Left the origin and never reached its destination station at all.\r\n  Signals: last scan is at the origin hub; no inbound record anywhere\r\n  downstream; destination station has no arrival record.\r\n\r\n\"Lost in Transit\"\r\n  Vanished BETWEEN two facilities mid-network. It departed one scan point\r\n  and never reached the next one.\r\n  Signals: a departure or load scan with no matching arrival scan at the\r\n  next hub; no movement for days while in the network.\r\n\r\n\"Lost in Station\"\r\n  Arrived AT a facility and never left it. It is inside a building,\r\n  unaccounted for.\r\n  Signals: an arrival or receive scan with no subsequent load or\r\n  out-for-delivery scan; floor or dock has been searched.\r\n\r\n\"Misdelivered and Lost\"\r\n  Physically DELIVERED, but to the wrong address or wrong person.\r\n  Signals: proof of delivery shows an address or unit that isn't the\r\n  customer's; delivered to an old or outdated address.\r\n\r\n\"Stolen\"\r\n  Delivered CORRECTLY, then taken from the delivery point.\r\n  Signals: proof-of-delivery photo shows it at the right door but it's\r\n  gone; signature captured doesn't match anyone at the residence.\r\n\r\n\"Not Lost\"\r\n  No loss occurred. Use this for delays, weather, customs holds, damage,\r\n  scan or data errors, and confirmed receipts. The case may still be a\r\n  problem — but the package is not lost.\r\n\r\n\r\nHARD CONSTRAINT — the two fields must agree\r\n\r\n  isLostPackage = false  →  lossCategory MUST be \"Not Lost\"\r\n  isLostPackage = true   →  lossCategory MUST NOT be \"Not Lost\"\r\n\r\nNever return a lost category with isLostPackage false.\r\nNever return \"Not Lost\" with isLostPackage true.\r\nCheck this before you output.\r\n\r\n\r\nCATEGORY NAMES ARE EXACT\r\n\r\nUse the category strings exactly as written above, including capitalisation.\r\nDo not lowercase them. Do not rephrase them. Do not invent new ones.\r\n\r\n\r\nANTI-HALLUCINATION\r\n\r\n- Base your answer ONLY on the note. Invent nothing.\r\n- If the note is too vague to place the failure point, set isLostPackage\r\n  true only if loss is clearly evidenced, use the category that best fits\r\n  the last known location, and set confidence to \"low\".\r\n- Damage is NOT loss. A crushed box that arrived is \"Not Lost\".\r\n- A delay is NOT loss. A package moving in the wrong direction but still\r\n  tracked is \"Not Lost\" — it is delayed, not gone.\r\n- A data or scan inconsistency is NOT loss if the customer has the package.\r\n\r\n\r\nOUTPUT — return ONLY this JSON. No preamble, no markdown, no backticks.\r\n\r\n{\r\n  \"isLostPackage\": true or false,\r\n  \"lossCategory\": one of [\"Never arrived at station\", \"Lost in Transit\", \"Lost in Station\", \"Misdelivered and Lost\", \"Stolen\", \"Not Lost\"],\r\n  \"confidence\": \"high\" or \"medium\" or \"low\",\r\n  \"summary\": one sentence, plain English, what happened\r\n}\r\n\r\n\r\nEXAMPLES\r\n\r\nNote: \"Final scan recorded at the origin hub six days ago. No movement\r\nsince. Customer has called three times this week.\"\r\n{\"isLostPackage\": true, \"lossCategory\": \"Never arrived at station\", \"confidence\": \"high\",\r\n \"summary\": \"Package has not moved past the origin hub in six days and never reached its destination station.\"}\r\n\r\nNote: \"Parcel loaded onto the trailer at YYZ per the manifest but no\r\narrival scan at destination. Trailer contents audited, no trace.\"\r\n{\"isLostPackage\": true, \"lossCategory\": \"Lost in Transit\", \"confidence\": \"high\",\r\n \"summary\": \"Package was loaded at YYZ but never arrived at the next facility and is not on the trailer.\"}\r\n\r\nNote: \"Arrival scan at the station is on file but no load scan to a\r\ndelivery vehicle. Floor sweep completed twice, nothing found.\"\r\n{\"isLostPackage\": true, \"lossCategory\": \"Lost in Station\", \"confidence\": \"high\",\r\n \"summary\": \"Package was received at the station but never loaded out and cannot be found on site.\"}\r\n\r\nNote: \"Proof of delivery shows unit 402. The customer resides in unit 204.\r\nAttempting retrieval through the building office.\"\r\n{\"isLostPackage\": true, \"lossCategory\": \"Misdelivered and Lost\", \"confidence\": \"high\",\r\n \"summary\": \"Package was delivered to the wrong unit in the customer's building.\"}\r\n\r\nNote: \"Driver proof-of-delivery photo shows the parcel at the front door.\r\nCustomer arrived home twenty minutes later and found nothing there.\"\r\n{\"isLostPackage\": true, \"lossCategory\": \"Stolen\", \"confidence\": \"medium\",\r\n \"summary\": \"Package was delivered to the correct address but taken before the customer retrieved it.\"}\r\n\r\nNote: \"Weather advisory in effect with road closures along the delivery\r\nroute. ETA pushed out by 48 hours. Customer notified.\"\r\n{\"isLostPackage\": false, \"lossCategory\": \"Not Lost\", \"confidence\": \"high\",\r\n \"summary\": \"Delivery is delayed by weather-related road closures, not lost.\"}\r\n\r\nNote: \"Driver reports the carton was crushed on one side with contents\r\nvisible through the tear. Held at depot pending inspection.\"\r\n{\"isLostPackage\": false, \"lossCategory\": \"Not Lost\", \"confidence\": \"high\",\r\n \"summary\": \"Package arrived damaged and is held for inspection; it is not missing.\"}"}],"definitions":{"inputs":[{"id":"CaseNote","text":"CaseNote","type":"text"}],"formulas":[],"data":[],"output":{"formats":["text"]}},"modelParameters":{"modelType":"gpt-41-mini","gptParameters":{"temperature":0}},"settings":{"recordRetrievalLimit":30,"shouldPreserveRecordLinks":null,"runtime":null},"code":"","signature":""}</msdyn_customconfiguration>
+      <msdyn_majoriterationnumber>8</msdyn_majoriterationnumber>
+      <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+      <msdyn_name>c6a3e7e1-cbac-41da-a5e6-ce97ebd6c900_7/17/2026 5:37:07 PM</msdyn_name>
+      <msdyn_modelrundataspecification>H4sIAAAAAAAACpWQzQ6CMBCEX8XsuRcT44EboiReIAHivcqiTaBt2m0iIby7RfyL9eJ5Zr+Z2QFKjadUmY7TAY0VSkK0ZLCX2lGhFO0kCeohGmArrG55n/EOIQJgEBMZcXSEdpITbjFThKH1pTDINfkE3kLU8NYig6rXk6X0JHmGkQGvazF7EiUJrxTy4sDyCSbj3tyNj16vnvTR83NH/y773aKag4MBjZDCXgrkdnrl91V6VxcPOTj3FW8pGsBtkgEAAA==</msdyn_modelrundataspecification>
+      <msdyn_type>190690001</msdyn_type>
+      <msdyn_aimodelid>{c6a3e7e1-cbac-41da-a5e6-ce97ebd6c900}</msdyn_aimodelid>
+      <msdyn_trainedmodelaiconfigurationpareid>{8ca4bf1d-f66f-f111-a35d-7ced8da4bb78}</msdyn_trainedmodelaiconfigurationpareid>
+      <statecode>2</statecode>
+      <statuscode>7</statuscode>
+      <IsCustomizable>1</IsCustomizable>
+      <msdyn_templateversion>1</msdyn_templateversion>
+    </AIConfiguration>
+    <AIConfiguration>
+      <msdyn_aiconfigurationid>{8ca4bf1d-f66f-f111-a35d-7ced8da4bb78}</msdyn_aiconfigurationid>
+      <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+      <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+      <msdyn_modeldata>a4bc34bf-4d50-4b2b-947d-84473ddc256a</msdyn_modeldata>
+      <msdyn_name>c6a3e7e1-cbac-41da-a5e6-ce97ebd6c900_Training_6/24/2026 5:57:09 PM</msdyn_name>
+      <msdyn_modelrundataspecification>
+        {
+          "schemaVersion": 2,
+          "input": {},
+          "output": {}
+        }
+      </msdyn_modelrundataspecification>
+      <msdyn_type>190690000</msdyn_type>
+      <msdyn_aimodelid>{c6a3e7e1-cbac-41da-a5e6-ce97ebd6c900}</msdyn_aimodelid>
+      <statecode>2</statecode>
+      <statuscode>6</statuscode>
+      <IsCustomizable>1</IsCustomizable>
+      <msdyn_templateversion>1</msdyn_templateversion>
+    </AIConfiguration>
+  </AIConfigurations>
+</AIModel>

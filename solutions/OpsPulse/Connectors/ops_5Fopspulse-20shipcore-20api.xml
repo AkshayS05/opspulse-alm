@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>c8e97f4b-cfc8-47dc-a0f0-8f267b9c9735</connectorid>
+  <description>OpsPulse ShipCore API. A custom connector connects to the Azure Web API.</description>
+  <displayname>OpsPulse ShipCore API</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>ops_5Fopspulse-20shipcore-20api</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/ops_5Fopspulse-20shipcore-20api_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/ops_5Fopspulse-20shipcore-20api_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/ops_5Fopspulse-20shipcore-20api_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/ops_5Fopspulse-20shipcore-20api_iconblob.Png</iconblob>
+</Connector>

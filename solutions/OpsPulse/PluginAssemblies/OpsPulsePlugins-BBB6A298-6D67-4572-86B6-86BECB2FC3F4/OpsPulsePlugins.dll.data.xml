@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="OpsPulse.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=301ad58728b27565" PluginAssemblyId="bbb6a298-6d67-4572-86b6-86becb2fc3f4" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/OpsPulsePlugins-BBB6A298-6D67-4572-86B6-86BECB2FC3F4/OpsPulsePlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="OpsPulse.Plugins.ActionDerivationPlugin, OpsPulse.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=301ad58728b27565" PluginTypeId="6e93cd01-39a7-4e19-b341-89116542ed1a" Name="OpsPulse.Plugins.ActionDerivationPlugin">
+      <FriendlyName>6daf6348-8508-4e7c-8e1f-2d606e0f6382</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="OpsPulse.Plugins.ActionReopenedPlugin, OpsPulse.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=301ad58728b27565" PluginTypeId="65b4aaa4-2a6b-47b0-8eec-0a31e13d1794" Name="OpsPulse.Plugins.ActionReopenedPlugin">
+      <FriendlyName>a6e5a7c2-0016-4d31-baed-a6cc1c9c8082</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="OpsPulse.Plugins.ActionTotalDurationPlugin, OpsPulse.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=301ad58728b27565" PluginTypeId="0d60174a-47e3-4526-bb55-74fbc65eeba9" Name="OpsPulse.Plugins.ActionTotalDurationPlugin">
+      <FriendlyName>90f880ce-e8e0-423e-9c9e-4bb7b79bc9e5</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="OpsPulse.Plugins.CaseReferencePlugin, OpsPulse.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=301ad58728b27565" PluginTypeId="b5e8d775-4728-4886-9c5a-25ca8ad40d05" Name="OpsPulse.Plugins.CaseReferencePlugin">
+      <FriendlyName>794e5b8b-f2bf-4d00-b171-a773761168c8</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

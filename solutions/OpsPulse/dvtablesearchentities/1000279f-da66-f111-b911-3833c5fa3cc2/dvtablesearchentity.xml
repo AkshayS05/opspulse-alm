@@ -1,0 +1,9 @@
+<dvtablesearchentity dvtablesearchentityid="1000279f-da66-f111-b911-3833c5fa3cc2">
+  <dvtablesearch>
+    <dvtablesearchid>0e00279f-da66-f111-b911-3833c5fa3cc2</dvtablesearchid>
+  </dvtablesearch>
+  <entitylogicalname>ops_incident</entitylogicalname>
+  <iscustomizable>1</iscustomizable>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearchentity>

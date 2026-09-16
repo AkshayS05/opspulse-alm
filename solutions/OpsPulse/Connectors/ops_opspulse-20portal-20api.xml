@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>a87ab065-959b-4dde-ae6b-6a7efba5fffa</connectorid>
+  <description></description>
+  <displayname>OpsPulse Portal API</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>ops_opspulse-20portal-20api</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/ops_opspulse-20portal-20api_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/ops_opspulse-20portal-20api_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/ops_opspulse-20portal-20api_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/ops_opspulse-20portal-20api_iconblob.Png</iconblob>
+</Connector>
