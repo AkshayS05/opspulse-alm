@@ -1,0 +1,18 @@
+<customapi uniquename="OPS_GetOpenAccountCount">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="a custom api to count total active accounts">
+    <label description="a custom api to count total active accounts" languagecode="1033" />
+  </description>
+  <displayname default="Get Open Account Count">
+    <label description="Get Open Account Count" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>1</isfunction>
+  <isprivate>0</isprivate>
+  <name>OPS_GetOpenAccountCount</name>
+  <plugintypeid>
+    <plugintypeexportkey>0cf2ad0b-92ce-476b-8fe7-dac988428b90</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

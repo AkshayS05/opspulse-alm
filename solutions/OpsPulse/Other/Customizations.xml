@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26085.142" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26085.00142">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources />
+  <CustomControls />
+  <SolutionPluginAssemblies />
+  <AppModuleSiteMaps />
+  <AppModules />
+  <EntityDataProviders />
+  <Connectors />
+  <AIModels />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="new_sharedcommondataserviceforapps_b20c0">
+      <connectionreferencedisplayname>Microsoft Dataverse</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="new_sharedops5fopspulse20shipcore20api5f6c6aca33e7ffd0a4_43400">
+      <connectionreferencedisplayname>OpsPulse ShipCore API</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_ops-5fopspulse-20shipcore-20api-5f6c6aca33e7ffd0a4</connectorid>
+      <customconnectorid>
+        <connectorid>c8e97f4b-cfc8-47dc-a0f0-8f267b9c9735</connectorid>
+      </customconnectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

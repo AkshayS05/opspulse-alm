@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4b476b8c-c102-499d-bfe3-42fb683bffd0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ops_name" select="1" icon="1" preview="1">
+        <row name="result" id="ops_incidentid">
+          <cell name="ops_name" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="ops_agent" width="100" />
+          <cell name="ops_incidentid" width="100" />
+          <cell name="ops_casenote" width="100" />
+          <cell name="ops_status" width="105" />
+          <cell name="ops_lastmessageon" width="131" />
+          <cell name="ops_lostpackage" width="116" />
+          <cell name="ops_losscategory" width="122" />
+          <cell name="ops_resolvedon" width="113" />
+          <cell name="ops_severity" width="100" />
+          <cell name="ops_shipper" width="100" />
+          <cell name="ops_sladeadline" width="121" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ops_incident">
+          <attribute name="ops_incidentid" />
+          <attribute name="ops_name" />
+          <attribute name="createdon" />
+          <order attribute="ops_name" descending="false" />
+          <attribute name="ops_agent" />
+          <attribute name="ops_casenote" />
+          <attribute name="ops_status" />
+          <attribute name="ops_lastmessageon" />
+          <attribute name="ops_lostpackage" />
+          <attribute name="ops_losscategory" />
+          <attribute name="ops_resolvedon" />
+          <attribute name="ops_severity" />
+          <attribute name="ops_shipper" />
+          <attribute name="ops_sladeadline" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Incident Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="ops_API_Url">
+  <displayname default="API_Url">
+    <label description="API_Url" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.2</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

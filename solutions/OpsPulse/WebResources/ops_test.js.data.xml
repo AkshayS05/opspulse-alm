@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{181a109a-26ad-f111-b374-70a8a50ddf97}</WebResourceId>
+  <Name>ops_test.js</Name>
+  <DisplayName>TestJS</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ops_testjs181A109A-26AD-F111-B374-70A8A50DDF97</FileName>
+</WebResource>

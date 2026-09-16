@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>5ce519aa-ec28-47b7-9ee5-afd5498adde7</connectorid>
+  <description>Gives the data on the overdue cases per station</description>
+  <displayname>MCP Agent-1</displayname>
+  <iconbrandcolor></iconbrandcolor>
+  <name>crabc_5Fmcp-20agent-2D1</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/crabc_5Fmcp-20agent-2D1_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/crabc_5Fmcp-20agent-2D1_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/crabc_5Fmcp-20agent-2D1_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/crabc_5Fmcp-20agent-2D1_iconblob.Png</iconblob>
+</Connector>

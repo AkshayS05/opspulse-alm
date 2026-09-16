@@ -1,0 +1,222 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_b20c0"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_ops-5fopspulse-20shipcore-20api-5f6c6aca33e7ffd0a4": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedops5fopspulse20shipcore20api5f6c6aca33e7ffd0a4_43400"
+        },
+        "api": {
+          "name": "shared_ops-5fopspulse-20shipcore-20api-5f6c6aca33e7ffd0a4",
+          "logicalName": "ops_5Fopspulse-20shipcore-20api"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "596b1bda-40eb-4fcc-8271-2181e95e2f29"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Apply_to_each": {
+          "foreach": "@body('Get_Cases')",
+          "actions": {
+            "Compose_-_Status_Option_Value": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "39b965e3-5ad8-4883-941e-149de616bedc"
+              },
+              "type": "Compose",
+              "inputs": "@if(\r\n  equals(toLower(trim(string(item()?['status']))), 'open'),\r\n  884820000,\r\n  if(\r\n    equals(toLower(trim(string(item()?['status']))), 'new'),\r\n    884820000,\r\n    if(\r\n      equals(toLower(trim(string(item()?['status']))), 'in progress'),\r\n      884820001,\r\n      if(\r\n        equals(toLower(trim(string(item()?['status']))), 'resolved'),\r\n        884820002,\r\n        if(\r\n          equals(toLower(trim(string(item()?['status']))), 'reopened'),\r\n          884820003,\r\n          884820000\r\n        )\r\n      )\r\n    )\r\n  )\r\n)"
+            },
+            "Condition": {
+              "actions": {
+                "For_each": {
+                  "foreach": "@outputs('List_rows')?['body/value']",
+                  "actions": {
+                    "Add_a_new_row": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "5d3c9655-86fe-4b93-a62c-a6df03c5012c"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "CreateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "ops_incidents",
+                          "item/ops_title": "Azure data",
+                          "item/ops_agent": "@item()?['agent']",
+                          "item/ops_casenote": "@items('Apply_to_each')?['caseNotes']",
+                          "item/ops_status": "@outputs('Compose_-_Status_Option_Value')",
+                          "item/ops_name": "ShipCore",
+                          "item/ops_resolvedon": "@item()?['resolvedOn']",
+                          "item/ops_shipper": "@item()?['shipper']",
+                          "item/ops_sladeadline": "@item()?['slaDeadline']",
+                          "item/ops_sourcecaseid": "@item()?['caseId']",
+                          "item/ops_sourcecreatedon": "@item()?['createdOn']",
+                          "item/ops_stationcode": "@item()?['station']"
+                        },
+                        "authentication": {
+                          "type": "Raw",
+                          "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "356d231b-71b0-4063-a746-cf52ab730860"
+                  },
+                  "type": "Foreach"
+                }
+              },
+              "runAfter": {
+                "List_rows": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Update_a_row": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "bba9e24c-c288-4ff1-abc2-c66cc7f63d61"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "ops_incidents",
+                        "recordId": "@first(outputs('List_rows')?['body/value'])?['ops_incidentid']",
+                        "item/ops_agent": "@items('Apply_to_each')?['agent']",
+                        "item/ops_casenote": "@items('Apply_to_each')?['caseNotes']",
+                        "item/ops_status": "@outputs('Compose_-_Status_Option_Value')",
+                        "item/ops_resolvedon": "@items('Apply_to_each')?['resolvedOn']",
+                        "item/ops_sladeadline": "@items('Apply_to_each')?['slaDeadline']"
+                      },
+                      "authentication": {
+                        "type": "Raw",
+                        "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                      }
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "and": [
+                  {
+                    "equals": [
+                      "@length(outputs('List_rows')?['body/value'])",
+                      0
+                    ]
+                  }
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4d107803-493f-495a-8a47-32b7eeecc319"
+              },
+              "type": "If"
+            },
+            "List_rows": {
+              "runAfter": {
+                "Compose_-_Status_Option_Value": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "83ed3506-f6d8-4887-8e19-67491a7adda4"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "ops_incidents",
+                  "$filter": "ops_sourcecaseid eq '@{items('Apply_to_each')?['caseId']}'"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Get_Cases": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c8811a4b-6e49-42ee-8943-7b42e220f707"
+          },
+          "type": "Foreach"
+        },
+        "Get_Cases": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "d4a19511-eba6-48e0-a611-82f3b3e3a7bc"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_ops-5fopspulse-20shipcore-20api-5f6c6aca33e7ffd0a4",
+              "operationId": "GetCases",
+              "apiId": ""
+            },
+            "parameters": {},
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

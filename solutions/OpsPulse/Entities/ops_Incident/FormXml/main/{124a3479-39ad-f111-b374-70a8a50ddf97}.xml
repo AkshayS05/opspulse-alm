@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{124a3479-39ad-f111-b374-70a8a50ddf97}</formid>
+    <IntroducedVersion>1.0.0.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab name="Case Details" id="58cb9532-61c5-4adc-a068-3bd932cd3095" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{667130c7-b0d4-455c-8dd1-203b78c9a6f6}">
+          <labels>
+            <label description="Case Details" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="5fc61491-ccf0-4354-8889-e376892d1478" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{6de4f74c-128b-4af5-bb7c-06c234f94bdf}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{e79d8cb0-5eed-4fe7-a1bd-8c42473a6d95}" locklevel="0" colspan="1" rowspan="1" visible="false" labelid="{d7227242-8bdc-47be-842c-7468c3f56da0}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ops_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f9aa2561-fb5e-4b47-8a72-a6fd1e55c05c}" locklevel="0" colspan="1" rowspan="1" labelid="{b0021159-639d-4953-aa43-c68de7b3b41b}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ops_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{23eba3fa-de8a-422d-8c8b-54d4898678c3}" locklevel="0" colspan="1" rowspan="1" labelid="{0967d5e4-a125-4eb4-9be4-34b0636f7add}">
+                        <labels>
+                          <label description="Source Case ID" languagecode="1033" />
+                        </labels>
+                        <control id="ops_sourcecaseid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_sourcecaseid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{956b47a7-b142-4bb3-ab3d-3ca7d41297ce}" locklevel="0" colspan="1" rowspan="1" labelid="{8db3fe52-3bc9-4fcf-98b1-8daf323b6e50}">
+                        <labels>
+                          <label description="Shipper" languagecode="1033" />
+                        </labels>
+                        <control id="ops_shipper" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_shipper" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{869355b1-34c2-431c-808d-2e43eb6485c5}" locklevel="0" colspan="1" rowspan="1" labelid="{7d1dcf16-ecbf-4d82-87af-6715cc3b1b49}">
+                        <labels>
+                          <label description="Agent" languagecode="1033" />
+                        </labels>
+                        <control id="ops_agent" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_agent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cb996a22-ca56-43ea-905c-532501529114}" locklevel="0" colspan="1" rowspan="1" labelid="{e424adba-6177-498c-9b7b-7d29cdb7967f}">
+                        <labels>
+                          <label description="Station" languagecode="1033" />
+                        </labels>
+                        <control id="ops_station" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ops_station" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{77aaafe9-6dd0-4a91-aa92-2effb2dc229a}" locklevel="0" colspan="1" rowspan="1" labelid="{1fe92d54-f1a0-40a3-a80a-4c81927f05c3}">
+                        <labels>
+                          <label description="Station Code" languagecode="1033" />
+                        </labels>
+                        <control id="ops_stationcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_stationcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bcacb229-b483-48da-9e34-fe5f8bb4e9b2}" locklevel="0" colspan="1" rowspan="1" labelid="{049d7c3d-841e-4edd-be88-5d8cc3927c18}">
+                        <labels>
+                          <label description="Case Status" languagecode="1033" />
+                        </labels>
+                        <control id="ops_status" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ops_status" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{912e565f-d8ae-4782-90ff-d61a5ce15c50}" locklevel="0" colspan="1" rowspan="1" labelid="{b4b5833a-0516-4352-aca8-db85baa288a9}">
+                        <labels>
+                          <label description="Severity" languagecode="1033" />
+                        </labels>
+                        <control id="ops_severity" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ops_severity" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{43438e12-83e2-463f-8d17-91150ecfb47c}" locklevel="0" colspan="1" rowspan="1" labelid="{56fdea8d-00e9-4837-a60f-753cf158c12b}">
+                        <labels>
+                          <label description="Case Note" languagecode="1033" />
+                        </labels>
+                        <control id="ops_casenote" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="ops_casenote" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{0bca20ee-e4e6-48f7-ab1d-8718147d7459}" rowspan="4" colspan="1" auto="false" labelid="{e5f1b102-d535-4a62-9cbc-03832d0bb29a}">
+                        <labels>
+                          <label description="New SG control 1788889056252" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>ops_actionlog_Case_ops_incident</RelationshipName>
+                            <TargetEntityType>ops_actionlog</TargetEntityType>
+                            <ViewId>{7ff1ae07-d042-4a4b-b336-ccf8a059d719}</ViewId>
+                            <ViewIds>{7ff1ae07-d042-4a4b-b336-ccf8a059d719}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="AI Analysis" id="9b76fa98-c466-4468-96e2-1beef1b9f4bb" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{81f61224-2432-4e39-8321-6493d7efed35}">
+          <labels>
+            <label description="AI Analysis" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_1" id="e53f5b28-a46d-44e8-8872-0c78efc28663" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{5de83726-2ef5-459d-b174-d585034ac451}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{b1f77992-4855-4fda-af5d-48192e51824e}" locklevel="0" colspan="1" rowspan="1" labelid="{b81d853b-990e-47bf-a598-864bc91487c5}">
+                        <labels>
+                          <label description="Detection Summary" languagecode="1033" />
+                        </labels>
+                        <control id="ops_detectionsummary" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="ops_detectionsummary" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{69390b8b-272c-4ddc-aa35-c6f1ec84d414}" locklevel="0" colspan="1" rowspan="1" labelid="{2f6b3868-8e13-40b6-b7b9-7e2f0dd15e00}">
+                        <labels>
+                          <label description="Loss Category" languagecode="1033" />
+                        </labels>
+                        <control id="ops_losscategory" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ops_losscategory" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{410e4261-3c50-4c5a-a595-f2b1a46bf2c1}" locklevel="0" colspan="1" rowspan="1" labelid="{aa886f59-e1d7-4e04-a4bc-41e1d6d8febd}">
+                        <labels>
+                          <label description="Lost Package" languagecode="1033" />
+                        </labels>
+                        <control id="ops_lostpackage" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="ops_lostpackage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{98a2857c-04b8-4fad-a3c7-e15668d82623}" locklevel="0" colspan="1" rowspan="1" labelid="{e51ad761-6f96-4280-a6d2-0699bb247448}">
+                        <labels>
+                          <label description="Derived Action" languagecode="1033" />
+                        </labels>
+                        <control id="ops_derivedaction" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ops_derivedaction" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Timeline" id="1e45719b-c962-426f-951f-f9dd9f32bce4" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{279534bd-1e22-468a-902a-a06a7f598817}">
+          <labels>
+            <label description="Timeline" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_4_section_1" id="0b2a8651-d929-43a1-a71c-4ec027d6689e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{c5fc7e2a-ea67-4b23-9578-3fbb20ebb158}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+                <section name="Timeline_section_3" id="98a705b0-eb5a-4352-94ee-3d487424ea4a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{e6526bba-02be-4c96-ad16-673aa0e7fa27}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{d6738a8d-ffc7-4972-931c-26829e02bbf3}" locklevel="0" colspan="1" rowspan="1" labelid="{553e3266-d666-41c3-80ed-aa33ca76594a}">
+                        <labels>
+                          <label description="Source Created On" languagecode="1033" />
+                        </labels>
+                        <control id="ops_sourcecreatedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ops_sourcecreatedon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9870ff6c-8d28-4bac-b491-e4f6ed2a62b6}" locklevel="0" colspan="1" rowspan="1" labelid="{1bfaf02e-6256-4597-856e-8f22b411fb17}">
+                        <labels>
+                          <label description="SLA Deadline" languagecode="1033" />
+                        </labels>
+                        <control id="ops_sladeadline" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ops_sladeadline" disabled="false" uniqueid="{74ec96c1-9a44-44be-9a81-e36dc0ea9d1f}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2d639ded-c686-4ad6-a74e-051a3f8144c3}" locklevel="0" colspan="1" rowspan="1" labelid="{238b11ae-e04d-48ef-a1f4-bae8a9568058}">
+                        <labels>
+                          <label description="Resolved On" languagecode="1033" />
+                        </labels>
+                        <control id="ops_resolvedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ops_resolvedon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{39caff33-7505-4af3-a1d4-b72e1db17a06}" locklevel="0" colspan="1" rowspan="1" labelid="{13e195f7-ec1d-4128-9dae-1893e0e49ecf}">
+                        <labels>
+                          <label description="TotalDuration" languagecode="1033" />
+                        </labels>
+                        <control id="ops_totalduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ops_totalduration" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a45c400-3e04-4d64-b69b-57832cb5cdc0}" locklevel="0" colspan="1" rowspan="1" labelid="{6a837eec-ac90-4dfc-b3a4-c409f075bafb}">
+                        <labels>
+                          <label description="LastMessageOn" languagecode="1033" />
+                        </labels>
+                        <control id="ops_lastmessageon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="ops_lastmessageon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{29cb71a8-ff52-4025-80f9-ddfad60fd58c}" IsUserDefined="1" visible="false" name="General" labelid="{a821fe6c-f761-467f-b8b3-259406330db4}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{47532155-3e94-46b8-b51d-4a26244059b9}" labelid="{26c2ea74-7385-44da-b637-c7e9f2bf24bc}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{26a3bf31-280f-4d1f-9637-fd9f52cb4775}" labelid="{c89edd5e-0e44-4078-b9cf-14fdd29a55b2}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ops_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ops_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dc79e8a5-2671-4a21-afea-a261220d5b05}" locklevel="0" colspan="1" rowspan="1" labelid="{8054db4a-2e85-4418-9a99-bb102103c9bc}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="ops_title" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ops_title" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16b14c4f-1167-4034-a733-73b3a97e6e7b}" locklevel="0" colspan="1" rowspan="1" labelid="{76833e42-3388-4c21-8754-575ebd14ab76}">
+                        <labels>
+                          <label description="Case Status" languagecode="1033" />
+                        </labels>
+                        <control id="ops_status" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ops_status" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{615f638d-af04-4454-a5d2-d779f7e25066}" labelid="{f5b24769-f1cf-49eb-9742-b808471ee4ba}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{7ba1eb01-3e67-4ae0-bed4-a2a5633f504d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{32e3bbfa-ae37-4560-b715-26b54bfb2640}" showlabel="false" labelid="{5d4cc1b9-5cf3-49d7-8b2b-d7eca35b9abd}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{04cc560a-f41f-4fe7-b0a8-b1698e1efb3f}" showlabel="false" labelid="{111faedc-b3ca-4af3-afd6-c2aafd364429}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8843bfa8-323f-4750-9ab7-2c4555f0d5bc}" showlabel="false" labelid="{46575878-b43a-4cd8-a53e-ce02a1d5838f}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{a9351e66-428d-4480-a350-ef9b14627f81}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{c4888b48-1d8b-4b8e-94fa-e451838bd7be}" showlabel="false" labelid="{486858a3-312a-40f2-b700-ee5f0e1e79fc}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{dc2cf0de-ee7b-431b-8375-db8ce9ebe537}" showlabel="false" labelid="{ad62d895-42a5-4fff-af27-b06ec270a5d6}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{fcd6b066-a77e-462a-a2ae-2c3b03aaddc8}" showlabel="false" labelid="{92e79075-e0d7-4bf5-b8a8-beccc51290ab}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Role Id="{1cfdea82-604b-6e94-9ac0-1e3efea2a227}" />
+        <Role Id="{dad0ddac-adb7-c693-c48d-5d1d028959f4}" />
+        <Role Id="{65cf772e-3fa4-3cbc-964f-640be0c6afa5}" />
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{14763463-513c-23dc-2e57-afdfe75324ce}" />
+        <Role Id="{91eac381-20d9-e1b0-7605-cc25359688d0}" />
+        <Role Id="{e8375c90-22ae-ee6a-8e94-dfee158e10e4}" />
+        <Role Id="{6ff821ac-029c-e6e2-2d14-ed41ffe1f85a}" />
+      </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{74ec96c1-9a44-44be-9a81-e36dc0ea9d1f}">
+          <customControl id="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}">
+            <parameters>
+              <datafieldname>ops_sladeadline</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="ops_OpsPulse.SLABadge">
+            <parameters>
+              <slaDeadline type="DateAndTime.DateAndTime">ops_sladeadline</slaDeadline>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="ops_OpsPulse.SLABadge">
+            <parameters>
+              <slaDeadline type="DateAndTime.DateAndTime">ops_sladeadline</slaDeadline>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="ops_OpsPulse.SLABadge">
+            <parameters>
+              <slaDeadline type="DateAndTime.DateAndTime">ops_sladeadline</slaDeadline>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <formLibraries>
+        <Library name="ops_test.js" libraryUniqueId="{81208fa9-82d9-4fdc-add4-80e6bbec4825}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="onFormLoad" libraryName="ops_test.js" handlerUniqueId="{0f8e21b3-e9c4-47ac-95c8-748ab3271e90}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="JS Test Form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

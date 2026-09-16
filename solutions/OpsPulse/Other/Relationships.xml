@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_ops_actionlog" />
+  <EntityRelationship Name="business_unit_ops_incident" />
+  <EntityRelationship Name="business_unit_ops_station" />
+  <EntityRelationship Name="lk_ops_actionlog_createdby" />
+  <EntityRelationship Name="lk_ops_actionlog_modifiedby" />
+  <EntityRelationship Name="lk_ops_incident_createdby" />
+  <EntityRelationship Name="lk_ops_incident_modifiedby" />
+  <EntityRelationship Name="lk_ops_station_createdby" />
+  <EntityRelationship Name="lk_ops_station_modifiedby" />
+  <EntityRelationship Name="ops_actionlog_Case_ops_incident" />
+  <EntityRelationship Name="ops_incident_Station_ops_station" />
+  <EntityRelationship Name="owner_ops_actionlog" />
+  <EntityRelationship Name="owner_ops_incident" />
+  <EntityRelationship Name="owner_ops_station" />
+  <EntityRelationship Name="team_ops_actionlog" />
+  <EntityRelationship Name="team_ops_incident" />
+  <EntityRelationship Name="team_ops_station" />
+  <EntityRelationship Name="user_ops_actionlog" />
+  <EntityRelationship Name="user_ops_incident" />
+  <EntityRelationship Name="user_ops_station" />
+</EntityRelationships>
