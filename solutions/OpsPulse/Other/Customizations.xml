@@ -15,6 +15,7 @@
   <AppModuleSiteMaps />
   <AppModules />
   <EntityDataProviders />
+  <CanvasApps />
   <Connectors />
   <AIModels />
   <connectionreferences>
