@@ -84,6 +84,7 @@
       <RootComponent type="1" schemaName="ops_incident" behavior="0" />
       <RootComponent type="1" schemaName="ops_station" behavior="0" />
       <RootComponent type="29" id="{dde4bc2a-2178-f111-a35d-7ced8da4bb78}" behavior="0" />
+      <RootComponent type="300" schemaName="crabc_opspulsereactportal_7e0d3" behavior="0" />
       <RootComponent type="372" id="{5ce519aa-ec28-47b7-9ee5-afd5498adde7}" schemaName="crabc_5Fmcp-20agent-2D1" behavior="0" />
       <RootComponent type="372" id="{c8e97f4b-cfc8-47dc-a0f0-8f267b9c9735}" schemaName="ops_5Fopspulse-20shipcore-20api" behavior="0" />
       <RootComponent type="372" id="{a87ab065-959b-4dde-ae6b-6a7efba5fffa}" schemaName="ops_opspulse-20portal-20api" behavior="0" />
