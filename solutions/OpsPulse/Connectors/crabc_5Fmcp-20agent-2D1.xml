@@ -3,7 +3,7 @@
   <connectorid>5ce519aa-ec28-47b7-9ee5-afd5498adde7</connectorid>
   <description>Gives the data on the overdue cases per station</description>
   <displayname>MCP Agent-1</displayname>
-  <iconbrandcolor></iconbrandcolor>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
   <name>crabc_5Fmcp-20agent-2D1</name>
   <connectortype>1</connectortype>
   <openapidefinition>/Connector/crabc_5Fmcp-20agent-2D1_openapidefinition.json</openapidefinition>
